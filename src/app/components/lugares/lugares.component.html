@@ -1,0 +1,24 @@
+<!-- google maps - longitud, latitud, zoom y agm-map en style -->
+<agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+</agm-map>
+<hr/>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <h2>Lugares cercano</h2>
+      <ul class="list-group">
+        <ng-container *ngFor="let lugar of listaLugares; let i = index ">
+          <a routerLink="/detalle/{{lugar.id}}" [queryParams]="{action: 'view', referer: 'google'}">
+            <li class="list-group-item" [ngClass]="{numeroPar: (i+1) % 2 !== 0}" [resaltar]="lugar.plan">{{lugar.nombre}} </li>
+          </a>
+        </ng-container>
+      </ul>
+    </div>
+
+    <div class="col-md-4">
+      <h2>Destados</h2>
+    </div>
+  </div>
+</div>
