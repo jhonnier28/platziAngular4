@@ -5,6 +5,36 @@ agm-map {
   }
 
 .numeroPar{
-   background-color: rebeccapurple;
-    color: blue;
+   background-color: #3B9933;
+    color: rgba(255, 0, 0, 0.43);
+}
+
+
+
+/*efecto aparecimiento*/
+
+/* You can add global styles to this file, and also import other style files */
+.animated {
+  animation-duration: 0.8s;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  animation-name: fadeIn;
+}
+
+/*SVG Loading*/
+svg path,
+svg rect{
+  fill: black;
 }
